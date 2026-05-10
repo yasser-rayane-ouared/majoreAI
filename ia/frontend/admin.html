@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - StudyFlow AI</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <header class="admin-header">
+      <div class="admin-header-left">
+        <div class="logo-icon">🎓</div>
+        <h1>StudyFlow AI</h1>
+        <span class="admin-badge">Admin</span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button class="btn-ghost" onclick="window.location.href='/'">← Back to Chat</button>
+        <button class="btn-icon" onclick="loadAdminData()" title="Refresh">🔄</button>
+      </div>
+    </header>
+    <div class="admin-content">
+      <div class="stats-grid" id="stats-grid">
+        <div class="stat-card"><div class="stat-icon">👥</div><div class="stat-value" id="stat-users">-</div><div class="stat-label">Users</div></div>
+        <div class="stat-card"><div class="stat-icon">💬</div><div class="stat-value" id="stat-conversations">-</div><div class="stat-label">Conversations</div></div>
+        <div class="stat-card"><div class="stat-icon">📨</div><div class="stat-value" id="stat-messages">-</div><div class="stat-label">Messages</div></div>
+        <div class="stat-card"><div class="stat-icon">📁</div><div class="stat-value" id="stat-files">-</div><div class="stat-label">Files</div></div>
+        <div class="stat-card"><div class="stat-icon">🪙</div><div class="stat-value" id="stat-tokens">-</div><div class="stat-label">Tokens Used</div></div>
+        <div class="stat-card"><div class="stat-icon">💾</div><div class="stat-value" id="stat-storage">-</div><div class="stat-label">Storage</div></div>
+      </div>
+      <div class="admin-section">
+        <h3>👥 Users</h3>
+        <table class="admin-table" id="users-table">
+          <thead><tr><th>User</th><th>Email</th><th>Role</th><th>Provider</th><th>Messages</th><th>Joined</th><th>Actions</th></tr></thead>
+          <tbody id="users-tbody"></tbody>
+        </table>
+      </div>
+      <div class="admin-section">
+        <h3>📁 Recent Files</h3>
+        <table class="admin-table" id="files-table">
+          <thead><tr><th>File</th><th>Type</th><th>Size</th><th>Indexed</th><th>Uploaded</th></tr></thead>
+          <tbody id="files-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="/js/utils.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
